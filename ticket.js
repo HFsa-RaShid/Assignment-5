@@ -6,7 +6,7 @@ let availavleSeats=40;
 
 function changeSeatBackground(element){
     
-    if(count<2){
+    if(count<4){
         element.style.backgroundColor= '#1DD100';
         count++;
         availavleSeats--;
