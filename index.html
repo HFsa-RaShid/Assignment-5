@@ -84,7 +84,7 @@
         </div>
         <div class="navbar-end">
           <a class="btn bg-[#1DD1001A] border-[#1DD10066] text-[#1DD100]">
-            Button
+            Bus
             <img src="images/bus-icon.png" alt="" srcset="" />
           </a>
         </div>
@@ -107,7 +107,7 @@
                 the app. The integrated testing features allow for a streamlined
                 .
               </p>
-              <button
+              <button onclick="scrollToTicketSection()"
                 class="btn btn-primary bg-primary-color text-black border-none"
               >
                 Buy Tickets
@@ -210,7 +210,7 @@
                     srcset=""
                     class="h-6 w-6"
                   />
-                  <p class="text-[15px]">40 Seats left</p>
+                  <p class="text-[15px]"><span id="availavleSeat">40</span> Seats left</p>
                 </div>
               </div>
             </div>
@@ -268,7 +268,7 @@
         </div>
       </section>
       <!-- Select Your Seat -->
-      <section>
+      <section id="scrollToTicketSection">
         <div class="flex flex-col lg:flex-row ">
           <div class="w-[90%] lg:w-[60%] mx-auto lg:mx-0">
             <p class="pb-3">Select Your Seat</p>
@@ -304,10 +304,10 @@
               
               <div class="flex gap-2 lg:gap-12 mt-7 ">
                 <p class="flex items-center">A</p>
-                <div id="A1" class="bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center">A1</div>
-                <div id="A2" class="bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center">A2</div>
-                <div id="A3" class="bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center">A3</div>
-                <div id="A4" class="bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center">A4</div>
+                <div id="A1" class="a bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center" onclick="changeSeatBackground(this)">A1</div>
+                <div id="A2" class="a bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center" onclick="changeSeatBackground(this)">A2</div>
+                <div id="A3" class="a bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center" onclick="changeSeatBackground(this)">A3</div>
+                <div id="A4" class="a bg-[#F7F8F8] h-[56px] w-1/4 rounded-2xl flex justify-center items-center" onclick="changeSeatBackground(this)">A4</div>
               </div>
               <div class="flex gap-2 lg:gap-12 mt-7 ">
                 <p class="flex items-center">B</p>
@@ -335,8 +335,23 @@
           </div>
           <div class="h-[500px] border-gray-300 border-[1px] border-dashed ml-7"></div>
           <!-- right section of seats -->
-          >
+          
         </div>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Sorry!!</h3>
+            <p class="py-4"> You can select Four Seats at a time.</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
         
 
       </section>
