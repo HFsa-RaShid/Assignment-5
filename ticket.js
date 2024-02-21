@@ -112,11 +112,11 @@ function closeModal()
     if(text==='NEW15')
     {
         discountAmount = totalAmount * 0.15; 
-        document.getElementById('discountAmount').innerText=discountAmount;
+        
     }
     else if(text==='Couple 20'){
         discountAmount = totalAmount * 0.2;
-        document.getElementById('discountAmount').innerText=discountAmount;
+        
     }
     else{
 
@@ -124,6 +124,7 @@ function closeModal()
  })
  document.getElementById('cuponBtn').addEventListener('click',function(event){
     document.getElementById('cuponDiv').style.display = 'none';
+    document.getElementById('discountAmount').innerText=discountAmount;
     grandAmount = totalAmount - discountAmount;
         document.getElementById('grandAmount').innerText=grandAmount;
     
