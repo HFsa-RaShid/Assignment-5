@@ -1,6 +1,8 @@
 function scrollToTicketSection(){
     document.getElementById('scrollToTicketSection').scrollIntoView({behavior: 'smooth'});
 }
+
+
 let count=0;
 let availableSeats=40;
 let countBookedSeats = 0;
