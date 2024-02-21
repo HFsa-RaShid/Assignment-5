@@ -49,8 +49,8 @@ function changeSeatBackground(element){
         totalAmount = countBookedSeats*550;
          document.getElementById('totalAmount').innerText=totalAmount;
 
-         document.getElementById('discountAmount').innerText=discountAmount;
-    grandAmount = totalAmount - discountAmount;
+         
+         grandAmount = totalAmount ;
         document.getElementById('grandAmount').innerText=grandAmount;
 
 
@@ -128,7 +128,9 @@ function closeModal()
  })
  document.getElementById('cuponBtn').addEventListener('click',function(event){
     document.getElementById('cuponDiv').style.display = 'none';
-    
+    document.getElementById('discountAmount').innerText=discountAmount;
+    grandAmount = totalAmount - discountAmount;
+        document.getElementById('grandAmount').innerText=grandAmount;
     
  })
  
