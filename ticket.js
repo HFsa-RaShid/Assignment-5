@@ -5,6 +5,8 @@ let count=0;
 let availableSeats=40;
 let countBookedSeats = 0;
 let totalAmount=0;
+let discountAmount=0;
+let grandAmount=0;
 
 function changeSeatBackground(element){
     let seat=document.getElementById(element);
@@ -44,6 +46,11 @@ function changeSeatBackground(element){
         // Total Amount
         totalAmount = countBookedSeats*550;
          document.getElementById('totalAmount').innerText=totalAmount;
+
+        //  Grand Total
+        grandAmount = totalAmount-discountAmount;
+        document.getElementById('grandAmount').innerText=grandAmount;
+
 
         //  button enable
 
