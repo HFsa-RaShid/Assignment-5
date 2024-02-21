@@ -47,10 +47,6 @@ function changeSeatBackground(element){
         totalAmount = countBookedSeats*550;
          document.getElementById('totalAmount').innerText=totalAmount;
 
-        //  Grand Total
-        grandAmount = totalAmount-discountAmount;
-        document.getElementById('grandAmount').innerText=grandAmount;
-
 
         //  button enable
 
@@ -93,6 +89,9 @@ function changeSeatBackground(element){
     }
 
 }
+
+
+
 function openModal()
 {
     document.getElementById('my_modal_5').showModal();
@@ -103,14 +102,19 @@ function closeModal()
     document.getElementById('my_modal_5').close();
 
 }
+
+
+
  document.getElementById('cuponCode').addEventListener('keyup',function(event){
     const text = event.target.value;
     if(text==='NEW15')
     {
         discountAmount = totalAmount * 0.15; 
+        document.getElementById('discountAmount').innerText=discountAmount;
     }
     else if(text==='Couple 20'){
         discountAmount = totalAmount * 0.2;
+        document.getElementById('discountAmount').innerText=discountAmount;
     }
     else{
 
@@ -118,6 +122,24 @@ function closeModal()
  })
  document.getElementById('cuponBtn').addEventListener('click',function(event){
     document.getElementById('cuponDiv').style.display = 'none';
-    document.getElementById('discountAmount').innerText=discountAmount;
+    grandAmount = totalAmount - discountAmount;
+        document.getElementById('grandAmount').innerText=grandAmount;
+    
 
  })
+
+
+//  next button
+document.getElementById("nextButton").addEventListener("click", function() {
+    // Clear calculation result
+    document.getElementById("grandAmount").textContent = "0";
+    document.getElementById("totalAmount").textContent = "0";
+    document.getElementById("discountAmount").textContent = "0";
+});
+
+
+
+
+
+
+ 
