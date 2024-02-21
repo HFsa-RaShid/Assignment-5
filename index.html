@@ -270,7 +270,7 @@
       <!-- Select Your Seat -->
       <section id="scrollToTicketSection">
         <div class="flex flex-col lg:flex-row ">
-          <div class="w-[90%] lg:w-[60%] mx-auto lg:mx-0">
+          <div class="w-[90%] lg:w-[65%] mx-auto lg:mx-0">
             <p class="pb-3">Select Your Seat</p>
             <hr class="border-dashed">
             <div class="flex  pt-2 pb-2">
@@ -344,9 +344,9 @@
                 <table class=" w-[85%] mx-auto " id="seatInformationTable">
                   <thead>
                     <tr class="text-xl">
-                      <th>Seat <span id="countBookedSeats" class="bg-primary-color rounded-xl ">0</span></th>
-                      <th>Class</th>
-                      <th>Price</th>
+                      <th class="text-left">Seat <span id="countBookedSeats" class="bg-primary-color rounded-xl pl-1 pr-1">0</span></th>
+                      <th class="text-left">Class</th>
+                      <th class="text-left">Price</th>
                     </tr>
 
                   </thead>
@@ -354,12 +354,27 @@
 
                   </tbody>
 
-                  
-                    
-                  
-                  
                 </table>
                 <hr class="border-dashed">
+                <!-- Total amount -->
+                <div class="flex text-[16px] w-[90%] mx-auto ">
+                  <p class="w-[70%]">Total Price</p>
+                  <p class="text-right">BDT<span id="totalAmount"  class="pl-2">0</span></p>
+                </div>
+                
+
+                <!-- discount amount -->
+                <div id="discountAmountDiv" class="flex text-[16px] w-[90%] mx-auto" >
+                  <p class="w-[70%]">Discount Price</p>
+                  <p class="text-right">BDT<span id="discountAmount" class="pl-2">0</span></p>
+                </div>
+
+                <!--coupon apply button div -->
+                <div id="cuponDiv" class="w-[90%] mx-auto bg-white h-11 rounded-xl mt-2">
+                  <input id="cuponCode" class="w-[70%]  h-full p-3 rounded-xl" type="text" name="" id="" placeholder="Have any copupon? ">
+                  <button id="cuponBtn" class="text-white w-[25%] rounded-xl pt-2 pb-2 pl-4 pr-4 bg-primary-color" disabled>Apply</button>
+
+                </div>
 
 
               </div>

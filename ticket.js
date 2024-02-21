@@ -4,6 +4,7 @@ function scrollToTicketSection(){
 let count=0;
 let availableSeats=40;
 let countBookedSeats = 0;
+let totalAmount=0;
 
 function changeSeatBackground(element){
     let seat=document.getElementById(element);
@@ -39,6 +40,17 @@ function changeSeatBackground(element){
         // countBookedSeats
         countBookedSeats++;
         document.getElementById('countBookedSeats').innerText= countBookedSeats;
+
+        // Total Amount
+        totalAmount = countBookedSeats*550;
+         document.getElementById('totalAmount').innerText=totalAmount;
+
+        //  button enable
+
+         if(countBookedSeats===4)
+         {
+            document.getElementById('cuponBtn').removeAttribute('disabled');
+         }
 
     } 
     else if(count<5 && seat.classList.contains('selected'))
@@ -84,7 +96,21 @@ function closeModal()
     document.getElementById('my_modal_5').close();
 
 }
-function info()
-{
-    
-}
+ document.getElementById('cuponCode').addEventListener('keyup',function(event){
+    const text = event.target.value;
+    if(text==='NEW15')
+    {
+        discountAmount = totalAmount * 0.15; 
+    }
+    else if(text==='Couple 20'){
+        discountAmount = totalAmount * 0.2;
+    }
+    else{
+
+    }
+ })
+ document.getElementById('cuponBtn').addEventListener('click',function(event){
+    document.getElementById('cuponDiv').style.display = 'none';
+    document.getElementById('discountAmount').innerText=discountAmount;
+
+ })
