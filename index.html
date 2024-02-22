@@ -210,7 +210,7 @@
                     srcset=""
                     class="h-6 w-6"
                   />
-                  <p class="text-[15px]"><span id="availableSeat">40</span> Seats left</p>
+                  <p class="text-[15px]"><span id="availableSeat">16</span> Seats left</p>
                 </div>
               </div>
             </div>
@@ -340,7 +340,7 @@
             <div class=" w-[90%]  mx-auto">
               <p class="pb-3 ">Select Your Seat</p>
               <hr class="border-dashed">
-              <div class="bg-[#F7F8F8] w-full h-[300px]">
+              <div class="bg-[#F7F8F8] w-full  rounded-xl">
                 <table class=" w-[85%] mx-auto " id="seatInformationTable">
                   <thead>
                     <tr class="text-xl">
@@ -408,6 +408,23 @@
             </div>
           </div>
         </dialog>
+
+        <!-- VALID COUPON -->
+        <button class="btn hidden" onclick="modal.showModal()">open modal</button>
+        <dialog id="modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Sorry!!</h3>
+            <p class="py-4"> Please Try Again..Coupon Number is not valid</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
+       
 
 
         

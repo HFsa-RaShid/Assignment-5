@@ -4,11 +4,12 @@ function scrollToTicketSection(){
 
 
 let count=0;
-let availableSeats=40;
+let availableSeats=16;
 let countBookedSeats = 0;
 let totalAmount=0;
 let discountAmount=0;
 let grandAmount=0;
+let num=0;
 
 function changeSeatBackground(element){
     let seat=document.getElementById(element);
@@ -109,30 +110,51 @@ function closeModal()
 
 }
 
+// for valid coupon
+function validCouponModal()
+{
+    document.getElementById('modal').showModal();
+
+}
+function closeModal()
+{
+    document.getElementById('modal').close();
+
+}
+
 
 
  document.getElementById('cuponCode').addEventListener('keyup',function(event){
     const text = event.target.value;
     if(text==='NEW15')
     {
+        num=1;
         discountAmount = totalAmount * 0.15; 
         
     }
     else if(text==='Couple 20'){
         discountAmount = totalAmount * 0.2;
-        
+        num=1;    
     }
-    else{
-
-    }
+    
  })
  document.getElementById('cuponBtn').addEventListener('click',function(event){
-    document.getElementById('cuponDiv').style.display = 'none';
+    if(num===1){
+        document.getElementById('cuponDiv').style.display = 'none';
     document.getElementById('discountAmount').innerText=discountAmount;
     grandAmount = totalAmount - discountAmount;
         document.getElementById('grandAmount').innerText=grandAmount;
+
+    }
+    else{
+        validCouponModal();
+
+    }
+
+    
     
  })
+ 
  
  
 
@@ -144,7 +166,7 @@ document.getElementById("nextButton").addEventListener("click", function() {
     document.getElementById("totalAmount").textContent = "0";
     document.getElementById("discountAmount").textContent = "0";
     document.getElementById("countBookedSeats").textContent = "0";
-    document.getElementById("availableSeat").textContent = "40";
+    document.getElementById("availableSeat").textContent = "16";
     
 });
 
