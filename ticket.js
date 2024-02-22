@@ -47,7 +47,7 @@ function changeSeatBackground(element){
         document.getElementById('countBookedSeats').innerText= countBookedSeats;
 
         // Total Amount
-        totalAmount = countBookedSeats*550;
+        totalAmount += 550;
          document.getElementById('totalAmount').innerText=totalAmount;
 
          
@@ -73,6 +73,13 @@ function changeSeatBackground(element){
 
         countBookedSeats--;
         document.getElementById('countBookedSeats').innerText= countBookedSeats;
+
+        // Total Amount
+        totalAmount -= 550;
+         document.getElementById('totalAmount').innerText=totalAmount;
+
+         grandAmount = totalAmount ;
+        document.getElementById('grandAmount').innerText=grandAmount;
         
 
         for(let i=0;i<newRow.length;i++)
