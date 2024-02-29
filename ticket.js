@@ -157,25 +157,14 @@ function closeModal()
         validCouponModal();
 
     }
-
-    
     
  })
  
- 
- 
+//  refresh all info
 
-
-//  next button
-document.getElementById("nextButton").addEventListener("click", function() {
-    // Clear calculation result
-    document.getElementById("grandAmount").textContent = "0";
-    document.getElementById("totalAmount").textContent = "0";
-    document.getElementById("discountAmount").textContent = "0";
-    document.getElementById("countBookedSeats").textContent = "0";
-    document.getElementById("availableSeat").textContent = "16";
-    
-});
+function refresh(){
+    location.reload();
+}
 
 
 
